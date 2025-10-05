@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+    <!-- <script src="/socket.io/socket.io.js" defer></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js" defer></script>
+    <script src="/scripts/connect_to_server.js" defer></script>
+    <script src="/scripts/manage_user.js" defer></script>
+    <script src="/scripts/manage_contacts.js" defer></script>
+    <script src="/scripts/manage_messages.js" defer></script>
+    <script src="/scripts/manage_attachments.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="shortcut icon" href="/mevlly_logo.png" type="image/x-icon">
+    <title> Mevlly </title>
+</head>
+<body>
+
+
+    <div class="page">
+
+        <div class="contacts-section">
+            <div class="contact-header">
+                <p> Contacte </p>
+            </div>
+            <div class="contact-box">
+                <div class="search-contact">
+                    <div class="search-contact-box">
+                        <span>
+                            <ion-icon name="search-sharp" color="light"></ion-icon>
+                        </span>
+                        <input type="search" placeholder="Căutați o conversație">
+                    </div>
+                    <span class="add-contact" data-add-contact title="Conversație nouă">
+                        <ion-icon name="add-outline" color="primary" class="add-contact-icon"></ion-icon>
+                    </span>
+                </div>
+                <div class="contact-list" data-contact-list>
+                </div>
+            </div>
+            <div class="profile">
+                <form onsubmit="change_username(event)">
+                    <input type="text" id="username">
+                    <button type="submit"> Submit </button>
+                    <p>^ For backend testing</p>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="contacts-area" data-contacts-area>
+            <div class="contact-content-main" id="contact_content_main"></div>
+        </div>
+
+
+        <div class="add-contact-overlay" data-add-contact-overlay>
+            <div class="add-contact-modal">
+                <div class="add-contact-modal-content" data-add-contact-modal-content>
+                    <button class="close-modal" data-close-modal> &times; </button>
+                    <p class="add-contact-modal-title"> Contact nou </p>
+                    <input type="text" class="add-contact-modal-input" data-add-contact-modal-input placeholder="Tag-ul noului contact" maxlength="88">
+                    <input type="submit" class="add-contact-modal-submit" data-add-contact-modal-submit>
+                    <p class="existing-contact" data-existing-contact> &times; Acest contact este deja existent! </p>
+                    <p class="null-tag" data-null-tag> &times; Tag-ul nu poate fi null! </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    
+
+
+
+</body>
+</html>
